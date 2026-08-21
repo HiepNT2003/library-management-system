@@ -506,45 +506,6 @@ The frontend communicates with the backend using HTTP requests and JSON data.
 
 ---
 
-## 👨‍💻 My Role
-
-This project was developed as a **graduation project**.
-
-I was responsible for the overall development process, including:
-
-- System analysis and design
-- Database design
-- Frontend development
-- Backend API development
-- Authentication and authorization
-- REST API integration
-- E-book reader implementation
-- QR code borrowing and returning
-- Background job processing
-- Recommendation system
-- Testing and debugging
-- Deployment
-
----
-
-## 📚 What I Learned
-
-Through this project, I gained practical experience in:
-
-- Building a full-stack web application
-- Vue.js 3 and Composition API
-- ASP.NET Core Web API
-- Entity Framework Core
-- MySQL database design
-- RESTful API development
-- Authentication and authorization
-- Background job processing
-- Machine Learning with ML.NET
-- Git and GitHub
-- Debugging and deployment
-
----
-
 ## 🚀 Future Improvements
 
 Potential improvements include:

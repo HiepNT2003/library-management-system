@@ -244,3 +244,232 @@ The system follows a client-server architecture.
                │
                └──────────────► ML.NET
                                 Recommendation System
+
+
+📂 Project Structure
+LibraryManagementSystem/
+│
+├── backend/
+│   ├── Controllers/
+│   ├── Data/
+│   ├── DTOs/
+│   ├── Models/
+│   ├── Services/
+│   ├── Migrations/
+│   ├── Program.cs
+│   └── appsettings.json
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── views/
+│   │   ├── stores/
+│   │   ├── router/
+│   │   ├── services/
+│   │   └── assets/
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+└── README.md
+
+The actual project structure may differ depending on the current implementation.
+
+🗄️ Main Database Entities
+
+The system contains several main entities:
+
+ApplicationUser
+    │
+    ├── BorrowTransactions
+    ├── BorrowRequests
+    ├── UserFavoriteBooks
+    ├── ReadingProgress
+    └── Recommendations
+
+
+Book
+    │
+    ├── BookAuthors
+    ├── BookCategories
+    ├── BookLanguages
+    └── BookCopies
+
+
+BookCopy
+    │
+    └── BorrowTransactions
+
+
+DocumentType
+    ├── Physical Book
+    ├── Article
+    ├── Thesis
+    └── E-book
+🔐 Security
+
+The application uses ASP.NET Core Identity for authentication and authorization.
+
+Security-related features include:
+
+Password hashing
+Authentication
+Role-based authorization
+Protected API endpoints
+User permission management
+Token-based authentication
+
+Sensitive configuration values such as:
+
+Database passwords
+API keys
+Cloudinary credentials
+Authentication secrets
+
+should be stored in environment variables or local configuration files and must not be committed to the repository.
+
+⚙️ Getting Started
+Prerequisites
+
+Make sure the following tools are installed:
+
+.NET SDK 8+
+Node.js 20+
+npm
+MySQL 8+
+Git
+📥 Clone the Repository
+git clone https://github.com/HiepNT2003/library-management-system.git
+
+
+cd library-management-system
+🔧 Backend Setup
+
+Go to the backend directory:
+
+cd backend
+
+Restore dependencies:
+
+dotnet restore
+
+Configure the database connection in:
+
+appsettings.Development.json
+
+Example:
+
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "server=localhost;database=LibrarySchoolDB;user=root;password=YOUR_PASSWORD"
+  }
+}
+
+Do not commit real database credentials or API keys to the repository.
+
+🗄️ Database Migration
+
+Apply Entity Framework Core migrations:
+
+dotnet ef database update
+
+If Entity Framework CLI is not installed:
+
+dotnet tool install --global dotnet-ef
+▶️ Run Backend
+dotnet run
+
+The API will be available at the configured local address.
+
+Example:
+
+https://localhost:5001
+🎨 Frontend Setup
+
+Open a new terminal and go to the frontend directory:
+
+cd frontend
+
+Install dependencies:
+
+npm install
+
+Configure the API URL in your environment file:
+
+VITE_API_URL=https://localhost:5001/api
+
+Run the development server:
+
+npm run dev
+
+The frontend will normally be available at:
+
+http://localhost:5173
+
+🧠 Recommendation System
+
+The recommendation system uses ML.NET Matrix Factorization to provide personalized book recommendations.
+
+User Interaction
+
+The system collects implicit user interactions such as:
+
+Borrow book
+    ↓
+User interaction score
+
+
+Favorite book
+    ↓
+Higher interaction score
+        ↓
+ML.NET Matrix Factorization
+        ↓
+Personalized recommendations
+
+The model is trained using historical user-book interactions.
+
+When there is insufficient data for a user, the system can use content-based filtering as a fallback strategy.
+
+🔄 Background Jobs
+
+Background jobs are used to automate scheduled tasks such as:
+
+Checking overdue books
+Calculating overdue fees
+Sending due-date reminders
+Updating borrowing status
+
+This reduces manual processing and ensures that time-dependent operations are handled automatically.
+
+🧪 API
+
+The backend exposes RESTful APIs for the frontend.
+
+Example API categories:
+
+/api/auth
+/api/books
+/api/authors
+/api/categories
+/api/book-copies
+/api/transactions
+/api/borrow-requests
+/api/users
+/api/recommendations
+
+The frontend communicates with the backend using HTTP requests and JSON data.
+
+🚀 Future Improvements
+
+Potential improvements include:
+
+More advanced recommendation algorithms
+Improved search with full-text indexing
+Performance optimization
+Automated testing
+Docker containerization
+More detailed analytics and reporting
+📄 License
+
+This project was developed for educational purposes as a graduation project.

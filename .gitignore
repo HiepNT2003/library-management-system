@@ -1,0 +1,31 @@
+# Build
+bin/
+obj/
+
+# User files
+*.user
+*.suo
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Rider
+.idea/
+
+# OS
+.DS_Store
+
+# Secrets
+appsettings.Development.json
+
+# Node
+node_modules/
+dist/
+.env
+
+# ML.NET model
+*.zip
+recommendation_model.zip

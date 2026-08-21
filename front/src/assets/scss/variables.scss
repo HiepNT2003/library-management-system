@@ -1,0 +1,15 @@
+@mixin custom-scroll-bar {
+  &::-webkit-scrollbar-track:vertical {
+    background-color: transparent;
+    position: relative;
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    position: relative;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #8f8e8e;
+  }
+}

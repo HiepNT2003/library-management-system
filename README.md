@@ -246,7 +246,7 @@ The system follows a client-server architecture.
                                 Recommendation System
 
 
-📂 Project Structure
+## 📂 Project Structure
 LibraryManagementSystem/
 │
 ├── backend/
@@ -275,7 +275,7 @@ LibraryManagementSystem/
 
 The actual project structure may differ depending on the current implementation.
 
-🗄️ Main Database Entities
+## 🗄️ Main Database Entities
 
 The system contains several main entities:
 
@@ -306,7 +306,7 @@ DocumentType
     ├── Article
     ├── Thesis
     └── E-book
-🔐 Security
+## 🔐 Security
 
 The application uses ASP.NET Core Identity for authentication and authorization.
 
@@ -328,7 +328,7 @@ Authentication secrets
 
 should be stored in environment variables or local configuration files and must not be committed to the repository.
 
-⚙️ Getting Started
+## ⚙️ Getting Started
 Prerequisites
 
 Make sure the following tools are installed:
@@ -367,7 +367,7 @@ Example:
 
 Do not commit real database credentials or API keys to the repository.
 
-🗄️ Database Migration
+### 🗄️ Database Migration
 
 Apply Entity Framework Core migrations:
 
@@ -406,7 +406,7 @@ The frontend will normally be available at:
 
 http://localhost:5173
 
-🧠 Recommendation System
+## 🧠 Recommendation System
 
 The recommendation system uses ML.NET Matrix Factorization to provide personalized book recommendations.
 
@@ -431,7 +431,7 @@ The model is trained using historical user-book interactions.
 
 When there is insufficient data for a user, the system can use content-based filtering as a fallback strategy.
 
-🔄 Background Jobs
+## 🔄 Background Jobs
 
 Background jobs are used to automate scheduled tasks such as:
 
@@ -442,7 +442,7 @@ Updating borrowing status
 
 This reduces manual processing and ensures that time-dependent operations are handled automatically.
 
-🧪 API
+## 🧪 API
 
 The backend exposes RESTful APIs for the frontend.
 
@@ -460,7 +460,7 @@ Example API categories:
 
 The frontend communicates with the backend using HTTP requests and JSON data.
 
-🚀 Future Improvements
+## 🚀 Future Improvements
 
 Potential improvements include:
 
@@ -470,6 +470,6 @@ Performance optimization
 Automated testing
 Docker containerization
 More detailed analytics and reporting
-📄 License
+## 📄 License
 
 This project was developed for educational purposes as a graduation project.

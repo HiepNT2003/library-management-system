@@ -244,9 +244,13 @@ The system follows a client-server architecture.
                │
                └──────────────► ML.NET
                                 Recommendation System
+```
 
+---
 
 ## 📂 Project Structure
+
+```text
 LibraryManagementSystem/
 │
 ├── backend/
@@ -272,13 +276,13 @@ LibraryManagementSystem/
 │   └── vite.config.js
 │
 └── README.md
+```
 
-The actual project structure may differ depending on the current implementation.
+---
 
 ## 🗄️ Main Database Entities
 
-The system contains several main entities:
-
+```text
 ApplicationUser
     │
     ├── BorrowTransactions
@@ -287,7 +291,6 @@ ApplicationUser
     ├── ReadingProgress
     └── Recommendations
 
-
 Book
     │
     ├── BookAuthors
@@ -295,152 +298,191 @@ Book
     ├── BookLanguages
     └── BookCopies
 
-
 BookCopy
     │
     └── BorrowTransactions
-
 
 DocumentType
     ├── Physical Book
     ├── Article
     ├── Thesis
     └── E-book
+```
+
+---
+
 ## 🔐 Security
 
-The application uses ASP.NET Core Identity for authentication and authorization.
+The application uses **ASP.NET Core Identity** for authentication and authorization.
 
 Security-related features include:
 
-Password hashing
-Authentication
-Role-based authorization
-Protected API endpoints
-User permission management
-Token-based authentication
+- Password hashing
+- Authentication
+- Role-based authorization
+- Protected API endpoints
+- User permission management
+- Token-based authentication
 
-Sensitive configuration values such as:
+> Sensitive configuration values such as database passwords, API keys, Cloudinary credentials, and authentication secrets should be stored in environment variables or local configuration files and must not be committed to the repository.
 
-Database passwords
-API keys
-Cloudinary credentials
-Authentication secrets
-
-should be stored in environment variables or local configuration files and must not be committed to the repository.
+---
 
 ## ⚙️ Getting Started
-Prerequisites
+
+### Prerequisites
 
 Make sure the following tools are installed:
 
-.NET SDK 8+
-Node.js 20+
-npm
-MySQL 8+
-Git
-📥 Clone the Repository
-git clone https://github.com/HiepNT2003/library-management-system.git
+- .NET SDK 8+
+- Node.js 20+
+- npm
+- MySQL 8+
+- Git
+
+---
 
 
-cd library-management-system
-🔧 Backend Setup
+## 🔧 Backend Setup
 
 Go to the backend directory:
 
+```bash
 cd backend
+```
 
 Restore dependencies:
 
+```bash
 dotnet restore
+```
 
 Configure the database connection in:
 
+```text
 appsettings.Development.json
+```
 
 Example:
 
+```json
 {
   "ConnectionStrings": {
     "DefaultConnection": "server=localhost;database=LibrarySchoolDB;user=root;password=YOUR_PASSWORD"
   }
 }
+```
 
-Do not commit real database credentials or API keys to the repository.
+> Do not commit real database credentials or API keys to the repository.
 
 ### 🗄️ Database Migration
 
 Apply Entity Framework Core migrations:
 
+```bash
 dotnet ef database update
+```
 
 If Entity Framework CLI is not installed:
 
+```bash
 dotnet tool install --global dotnet-ef
-▶️ Run Backend
+```
+
+### ▶️ Run Backend
+
+```bash
 dotnet run
+```
 
 The API will be available at the configured local address.
 
 Example:
 
+```text
 https://localhost:5001
-🎨 Frontend Setup
+```
+
+---
+
+## 🎨 Frontend Setup
 
 Open a new terminal and go to the frontend directory:
 
+```bash
 cd frontend
+```
 
 Install dependencies:
 
+```bash
 npm install
+```
 
 Configure the API URL in your environment file:
 
+```env
 VITE_API_URL=https://localhost:5001/api
+```
 
 Run the development server:
 
+```bash
 npm run dev
+```
 
 The frontend will normally be available at:
 
+```text
 http://localhost:5173
+```
+
+---
 
 ## 🧠 Recommendation System
 
-The recommendation system uses ML.NET Matrix Factorization to provide personalized book recommendations.
+The recommendation system uses **ML.NET Matrix Factorization** to provide personalized book recommendations.
 
-User Interaction
+### User Interaction
 
 The system collects implicit user interactions such as:
 
+```text
 Borrow book
     ↓
 User interaction score
 
-
 Favorite book
     ↓
 Higher interaction score
+
         ↓
+
 ML.NET Matrix Factorization
+
         ↓
+
 Personalized recommendations
+```
 
 The model is trained using historical user-book interactions.
 
 When there is insufficient data for a user, the system can use content-based filtering as a fallback strategy.
 
+---
+
 ## 🔄 Background Jobs
 
 Background jobs are used to automate scheduled tasks such as:
 
-Checking overdue books
-Calculating overdue fees
-Sending due-date reminders
-Updating borrowing status
+- Checking overdue books
+- Calculating overdue fees
+- Sending due-date reminders
+- Updating borrowing status
 
 This reduces manual processing and ensures that time-dependent operations are handled automatically.
+
+---
 
 ## 🧪 API
 
@@ -448,6 +490,7 @@ The backend exposes RESTful APIs for the frontend.
 
 Example API categories:
 
+```text
 /api/auth
 /api/books
 /api/authors
@@ -457,19 +500,64 @@ Example API categories:
 /api/borrow-requests
 /api/users
 /api/recommendations
+```
 
 The frontend communicates with the backend using HTTP requests and JSON data.
+
+---
+
+## 👨‍💻 My Role
+
+This project was developed as a **graduation project**.
+
+I was responsible for the overall development process, including:
+
+- System analysis and design
+- Database design
+- Frontend development
+- Backend API development
+- Authentication and authorization
+- REST API integration
+- E-book reader implementation
+- QR code borrowing and returning
+- Background job processing
+- Recommendation system
+- Testing and debugging
+- Deployment
+
+---
+
+## 📚 What I Learned
+
+Through this project, I gained practical experience in:
+
+- Building a full-stack web application
+- Vue.js 3 and Composition API
+- ASP.NET Core Web API
+- Entity Framework Core
+- MySQL database design
+- RESTful API development
+- Authentication and authorization
+- Background job processing
+- Machine Learning with ML.NET
+- Git and GitHub
+- Debugging and deployment
+
+---
 
 ## 🚀 Future Improvements
 
 Potential improvements include:
 
-More advanced recommendation algorithms
-Improved search with full-text indexing
-Performance optimization
-Automated testing
-Docker containerization
-More detailed analytics and reporting
+- More advanced recommendation algorithms
+- Improved search with full-text indexing
+- Frontend performance optimization
+- Automated unit and integration testing
+- Docker containerization
+- More detailed analytics and reporting
+
+---
+
 ## 📄 License
 
-This project was developed for educational purposes as a graduation project.
+This project was developed for educational purposes.
